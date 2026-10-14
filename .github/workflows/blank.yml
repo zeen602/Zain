@@ -1,0 +1,15 @@
+name: RDP # 
+rdp by JoyWardanaa modifed on: workflow_dispatch: jobs: secure-rdp: runs-on: windows-latest timeout-minutes: 3600 steps: name: Configure Core RDP Settings By JoyWardanaa run: | Set-Item Property -Path 'HKLM: \System\CurrentControlSet\Co ntrol\Terminal Server' -Name "fDenyTSConnections" -Value 0 -Force Set-ItemProperty -Path 'HKLM: \System\CurrentControlSet\ Control\T erminal Server\WinStations\RDP-Tcp' -Name "UserAuthentication" -Value 0 -Force Set-ItemProperty -Path 'HKLM: \System\CurrentControlSet\ Control\T erminal Server\WinStations\RDP-Tcp' -Name "SecurityLayer" -Value 0 -Force netsh advfirewall firewall delete rule name="RDP-T
+
+
+
+
+
+
+
+
+
+
+
+
+ailscale" netsh advfirewall firewall add..
